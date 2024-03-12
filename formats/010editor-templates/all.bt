@@ -1,0 +1,26 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+byte magic[12];
+byte a;
+byte b;
+uint16 num;
+
+FSeek(FileSize());
+FSkip(-48*num);
+
+struct {
+  char name[40];
+  uint offset;
+  uint size;
+} FILE[num]; 

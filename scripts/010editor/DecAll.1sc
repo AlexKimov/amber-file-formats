@@ -1,0 +1,29 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Script File
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+//   History: 
+//------------------------------------------------
+
+FSkip(14);
+local int filenum = ReadUShort(FTell());
+local uint k, fsize;
+local byte b;
+
+fsize = FileSize();
+FSeek(fsize);
+FSkip(-48*filenum);
+
+while (1)
+{
+  b = ReadByte(FTell());
+  b = k ^ (b - 12) ^ 0x6F;
+  WriteByte(FTell(), b);
+  FSkip(1);
+  k += 1;
+  if (FTell() >= fsize) break;
+};

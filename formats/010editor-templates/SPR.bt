@@ -1,0 +1,146 @@
+//------------------------------------------------
+//--- 010 Editor v8.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local uint i, height, cnt;
+local int width, a, b;
+local long count, color, wdth;
+
+CHAR Magic[27];
+
+struct {
+  UINT Unkown;
+  UINT Offset1;
+
+  UINT Unkown;
+  UINT Unkown;
+
+  UINT Count;
+  UINT Width;
+  UINT Height;
+  UBYTE Dark;
+  UBYTE SFT;
+  UBYTE Intro;
+  UBYTE Gen;
+
+  UINT Unkown;
+  UINT Unkown;
+} HEADER;
+
+enum <ushort> SpriteType { 
+  BMP256_SPRITE = 65528, 
+  TC_SPRITE = 65529, 
+  BMP256_SPRITE_1 = 65530,
+  U_1 = 65531,
+  U_2 = 65533,
+  U_3 = 65532,
+  U_4 = 65534,
+  U_5 = 65534
+} SPRITE_TYPE;
+
+FSeek(HEADER.Offset1);
+
+struct {
+  UINT Unkown;
+  UINT Unkown;
+  UINT Offset;
+  UINT Size;
+  UINT Size;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  BYTE Unkown;
+} SPRITE_HEADER[HEADER.Count];
+
+struct {
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+  UINT Unkown;
+} A[HEADER.Count];
+
+//r (i = 0; i < 1; ++i) 
+//
+//FSeek(SPRITE_HEADER[i].Offset);
+
+//struct {
+//  UINT Unknown;
+//   UINT16 wKeyMask;
+//    UINT16 Unknown;
+    
+//    BYTE PalleteData[512];
+    
+
+//    height = HEADER.Height;
+
+//    while (height)
+//    {
+//      while (1) 
+//      {
+//        UBYTE Count;
+  
+//        if (Count < 254)
+//        {
+//          UBYTE Color;
+
+//          if ((count & 128u) != 0 ) 
+//            break;
+
+//          wdth += Count + (Count & 0x1Fu);         
+//        }
+//      }
+//      height--;
+//    }
+
+//  } SPRITE;
+//}

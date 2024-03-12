@@ -1,0 +1,73 @@
+//------------------------------------------------
+//--- 010 Editor v8.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+local uint col, i, size;
+
+CHAR Magic[8];
+UINT16 Unknown;
+UINT Type;
+UINT Width;
+UINT Height;
+UBYTE Unknown;
+UINT Count;
+DOUBLE Time;
+DOUBLE Time;
+UINT NextSize;
+BYTE RA[12];
+
+size = NextSize;
+while (!FEof())
+struct {
+  struct {
+    UINT NextSize;
+    UINT FrameIndex;
+    UINT16 End;
+    BYTE R[1147];
+    BYTE ER[1133];
+  } DATA;
+  struct {
+    BYTE Data[size];
+   // UINT16 End;
+   // struct {
+   //   UINT16 Unknown1;
+   //   UBYTE Unknown;
+   //   if (Unknown1 == 18)
+  //    { UINT16 A[3];}
+      //col = Unknown;
+  //    if (Unknown != 29)
+  //    {
+  //      while (col < Width) 
+  //      {
+  //        struct {
+  //          UBYTE Length;
+  //          if (Length < 128) 
+  //          {
+  //            UBYTE Data[Length]; 
+  //            col += Length;
+  //          } else 
+  //          {
+  //            UBYTE Byte; 
+  //            col += Length - 128;
+  //          }
+  //        } D;
+  //      };
+  //      //Printf("%d  ", col);
+  //      col = 0;
+  //    };
+  //    UINT16 LEND;
+ //   } LINE[Height] <optimize=false>;
+ // UINT16 End;
+  } FRAME_IMAGE;
+  size = DATA.NextSize;
+} FRAME_DATA <optimize=false>;
+

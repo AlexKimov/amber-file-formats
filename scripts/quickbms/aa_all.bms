@@ -1,0 +1,31 @@
+# Game: 
+# Description:
+# 
+# Link:
+
+get size asize
+GoTo 14
+get filesnum short
+
+xmath pos "size - 48*filesnum"
+xmath datasize "48*filesnum"
+log MEMORY_FILE pos datasize
+
+GoTo pos
+Set k long 0
+
+for i = 0 < datasize
+    getvarchr var MEMORY_FILE i byte
+    xmath var "k ^ (var - 12) ^ 0x6F"
+	putvarchr MEMORY_FILE i var	byte
+    math k += 1
+next i 
+
+GoTo pos
+
+for i = 0 < filesnum
+    GetDString name 40 MEMORY_FILE
+    get offset long MEMORY_FILE
+    get size long MEMORY_FILE  
+    log name offset size
+next i 

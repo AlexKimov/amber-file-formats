@@ -1,0 +1,1 @@
+F:\git\qbms\quickbms.exe -Y -F "*.all" aa_all.bms F:\git\liat unpacked
