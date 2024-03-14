@@ -1,0 +1,35 @@
+//------------------------------------------------
+//--- 010 Editor v12.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+char magic[4];
+uint offset;
+uint size;
+
+FSeek(offset);
+
+local float num;
+num = size/164;
+struct {
+  char namr[156];
+  uint offset;
+  uint size;
+} FILE_REC[num];
+
+local uint i;
+
+for (i = 0; i < num; ++i) {
+  FSeek(FILE_REC[i].offset);
+  struct {
+    byte data[FILE_REC[i].size];
+  } FILE;
+}; 

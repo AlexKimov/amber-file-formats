@@ -1,0 +1,19 @@
+# Game: 
+# Description:
+# 
+# Link:
+
+idstring "\x41\x4C\x45\x1B"
+get offset long
+get size long
+
+GoTo offset
+
+xmath filesnum "size/164"
+
+for i = 0 < filesnum
+    GetDString name 156
+    get offset long 
+    get size long
+    log name offset size
+next i 

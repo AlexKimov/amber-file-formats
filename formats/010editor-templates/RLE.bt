@@ -11,7 +11,17 @@
 //   History: 
 //------------------------------------------------
 
-struct {
-  BYTE A;
-  BYTE B;
-} L[10];
+uint16 width;
+uint16 height;
+Printf("%d\n",width*height);
+
+local uint aa;
+FSkip(0);
+
+while (FTell() <= (FileSize() - 1))
+{ 
+  FSkip(2);
+  aa += ReadUByte(FTell() - 1);
+};
+
+Printf("%d", aa);

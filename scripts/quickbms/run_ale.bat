@@ -1,0 +1,1 @@
+F:\git\qbms\quickbms.exe -d -Y -F "*.ale" ss_ale.bms F:\00\SnowStorm unpacked
